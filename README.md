@@ -1,31 +1,49 @@
-# DevNet
-This is offical codes for the methods described in
-> **DevNet: Self-supervised Monocular Depth Learning via Density Volume Construction**
+# [DevNet: Self-supervised Monocular Depth Learning via Density Volume Construction](https://arxiv.org/abs/2209.06351) - ECCV 2022.
+
+## Introduction 
+
+This is the PyTorch implementation of **DevNet: Self-supervised Monocular Depth Learning via Density Volume Construction**, a simple and efficient neural architecture for Self-supervised Monocular Depth Estimation.
 
 ## Setup
-
-### Requirements:
-The environment for reimplementing our code is described in environment.yml. You can set up and activate required conda environment by 
-```bash
-conda env create -f environment.yml
-conda activate devnet
+DevNet provides support for multiple versions of Python and Torch, such as:
+```
+python==3.8 
+pytorch==1.12.0
+torchvision==0.13.0
 ```
 
-## Datasets Used In Our Paper
-### Kitti Depth Estimation:
-Downloading description is already provided in [monodepth2](https://github.com/nianticlabs/monodepth2).
+## Data
+[KITTI]: To download this dataset, you can follow instruction of [MonoDepth2](https://github.com/nianticlabs/monodepth2)
 
-### Kitti Odometry Estimation:
-Kitti Odometry Dataset is provided in their website with detailed instruction [odometry](http://www.cvlibs.net/datasets/kitti/eval_odometry.php).
+[KITTI Odometry]: To download this dataset, you can follow instruction of [MonoDepth2](https://github.com/nianticlabs/monodepth2)
 
-### NYU Depth Dataset V2:
-NYU Depth Dataset V2 is provided in their website with detailed instruction [NYUV2](https://cs.nyu.edu/~silberman/datasets/nyu_depth_v2.html).
+[NYU-V2]: To download this dataset, you can follow instruction of [MonoDepth2](https://github.com/nianticlabs/monodepth2)
 
-### Pretrain Resnets:
-We downloaded [Pretrained Models](https://pytorch.org/vision/stable/models.html) in /pretrain.
-
-## Training
-We provide training codes for the unsupervised monocular depth estimation task. You can train it from scratch by running
-```bash
-sh train16.sh
+## Running the code
+### Inference
+The trained models for partial experiments presented in the paper could be found in `logs`. The inference script is `test_dev.py`.
+- DevNet on `kitti` with `resnet18` backbone and `192 x 640` resolution: 
 ```
+sh start2test.sh
+```
+### Training
+Necessary training details could also be found in `test_dev.py`.
+
+
+
+## Citation
+If you find this code useful for your research, please cite our paper
+
+```
+@inproceedings{zhou2022devnet,
+  title={Devnet: Self-supervised monocular depth learning via density volume construction},
+  author={Zhou, Kaichen and Hong, Lanqing and Chen, Changhao and Xu, Hang and Ye, Chaoqiang and Hu, Qingyong and Li, Zhenguo},
+  booktitle={European Conference on Computer Vision},
+  pages={125--142},
+  year={2022},
+  organization={Springer}
+}
+```
+## Acknowledgements
+Our code partially builds on [Monodepth2](https://github.com/nianticlabs/monodepth2).
+
