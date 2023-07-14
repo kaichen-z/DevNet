@@ -21,7 +21,7 @@ torchvision==0.13.0
 
 ## Running the code
 ### Inference
-The trained models for partial experiments presented in the paper could be found in `logs`. The inference script is `test_dev.py`.
+You can access the trained models for partial experiments described in the paper by visiting [this link](https://drive.google.com/drive/folders/1oyQnXlQ7WqfgzfG1ApF5tAJFfRb26QXZ?usp=sharing). To store them, simply download the models and save them in the logs directory. Additionally, the inference script is named test_dev.py.
 - DevNet on `kitti` with `resnet18` backbone and `192 x 640` resolution: 
 ```
 sh start2test.sh
